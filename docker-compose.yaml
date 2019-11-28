@@ -3,11 +3,11 @@ services:
   digitransit-ui:
     container_name: "digitransit-ui"
     image: vlaja/digitransit:digitransit_ui
-    depends_on:
-      - digitransit-otp
-  digitransit-otp:
-    container_name: "digitransit-otp"
-    image: vlaja/digitransit:digitransit_otp
+    # depends_on:
+    #   - digitransit-otp
+  # digitransit-otp:
+  #   container_name: "digitransit-otp"
+  #   image: vlaja/digitransit:digitransit_otp
   nginx:
     container_name: "linkme.nginx"
     image: nginx:1.15-alpine
@@ -20,7 +20,7 @@ services:
       - "443:443"
     links:
       - digitransit-ui
-      - digitransit-otp
+      # - digitransit-otp
     command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
   certbot:
     container_name: "certbot"
