@@ -3,6 +3,9 @@ services:
   digitransit-ui:
     container_name: "digitransit-ui"
     image: vlaja/digitransit:digitransit_ui
+  depends_on:
+    - nginx
+    - digitransit-otp
   digitransit-otp:
     container_name: "digitransit-otp"
     image: vlaja/digitransit:digitransit_otp
