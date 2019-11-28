@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.3"
 services:
   digitransit-ui:
     container_name: "digitransit-ui"
