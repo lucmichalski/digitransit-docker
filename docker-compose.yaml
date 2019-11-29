@@ -9,7 +9,7 @@ services:
     container_name: "digitransit-otp"
     image: vlaja/digitransit:digitransit_otp
   nginx:
-    container_name: "linkme.nginx"
+    container_name: "nginx"
     image: nginx:1.15-alpine
     volumes:
       - ./data/nginx:/etc/nginx/conf.d/
