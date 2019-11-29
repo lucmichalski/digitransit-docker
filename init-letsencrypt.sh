@@ -5,7 +5,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
   exit 1
 fi
 
-domains=(cityrouting.prototyp.digital api.cityrouting.prototyp.digital)
+domains=(api.cityrouting.prototyp.digital cityrouting.prototyp.digital)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="vlatko@prototyp.digital" # Adding a valid address is strongly recommended
@@ -56,7 +56,6 @@ domain_args=""
 for domain in "${domains[@]}"; do
   domain_args="$domain_args -d $domain"
 done
-echo "$domain_args"
 
 # Select appropriate email arg
 case "$email" in
