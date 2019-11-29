@@ -8,6 +8,8 @@ services:
   digitransit-otp:
     container_name: "digitransit-otp"
     image: vlaja/digitransit:digitransit_otp
+    volumes:
+      - ./data/otp:/opt/opentripplanner/graphs
   nginx:
     container_name: "nginx"
     image: nginx:1.15-alpine
