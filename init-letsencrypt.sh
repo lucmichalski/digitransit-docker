@@ -56,6 +56,7 @@ domain_args=""
 for domain in "${domains[@]}"; do
   domain_args="$domain_args -d $domain"
 done
+echo "$domain_args"
 
 # Select appropriate email arg
 case "$email" in
