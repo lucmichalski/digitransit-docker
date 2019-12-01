@@ -11,7 +11,7 @@ services:
     depends_on:
       - digitransit-otp-container
   digitransit-otp-container:
-    container_name: "digitransit-otp"
+    container_name: "digitransit-otp-container"
     image: vlaja/digitransit:digitransit_otp_container
   nginx:
     container_name: "nginx"
