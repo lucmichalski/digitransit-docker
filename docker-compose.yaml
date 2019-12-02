@@ -8,11 +8,11 @@ services:
   digitransit-otp:
     container_name: "digitransit-otp"
     image: vlaja/digitransit:digitransit_otp
-    depends_on:
-      - digitransit-otp-container
-  digitransit-otp-container:
-    container_name: "digitransit-otp-container"
-    image: vlaja/digitransit:digitransit_otp_container
+  #   depends_on:
+  #     - digitransit-otp-container
+  # digitransit-otp-container:
+  #   container_name: "digitransit-otp-container"
+  #   image: vlaja/digitransit:digitransit_otp_container
   nginx:
     container_name: "nginx"
     image: nginx:1.15-alpine
