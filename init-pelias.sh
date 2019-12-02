@@ -4,7 +4,7 @@ set -x
 mkdir /data /code
 
 # set proper permissions. make sure the user matches your `DOCKER_USER` setting in `.env`
-chown 1000:1000 /code
+chown -R 1000:1000 /code
 
 # clone repo
 cd /code
