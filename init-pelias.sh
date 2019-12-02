@@ -26,7 +26,7 @@ pelias compose pull
 pelias elastic start
 pelias elastic wait
 pelias elastic create
-pelias download openstreetmap
-pelias prepare openstreetmap
-pelias import openstreetmap
+pelias download osm
+pelias prepare osm
+pelias import osm
 pelias compose up
