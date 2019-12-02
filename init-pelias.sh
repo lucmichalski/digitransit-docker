@@ -1,6 +1,8 @@
 #!/bin/bash
 set -x
 
+mkdir /code
+
 # set proper permissions. make sure the user matches your `DOCKER_USER` setting in `.env`
 chown 1000:1000 /code
 
