@@ -7,7 +7,7 @@ chown 1000:1000 /code
 # clone repo
 cd /code
 git clone git@bitbucket.org:prototypdigital/digitransit-pelias.git
-cd docker
+cd digitransit-pelias
 
 # install pelias script
 ln -s "$(pwd)/pelias" /usr/local/bin/pelias
