@@ -3,13 +3,13 @@ services:
   digitransit-ui:
     container_name: "digitransit-ui"
     image: vlaja/digitransit:digitransit_ui
-    depends_on:
-      - digitransit-otp
-  digitransit-otp:
-    container_name: "digitransit-otp"
-    image: vlaja/digitransit:digitransit_otp
-    depends_on:
-      - digitransit-otp-container
+    # depends_on:
+    #   - digitransit-otp
+  # digitransit-otp:
+  #   container_name: "digitransit-otp"
+  #   image: vlaja/digitransit:digitransit_otp
+  #   depends_on:
+  #     - digitransit-otp-container
   digitransit-otp-container:
     container_name: "digitransit-otp-container"
     image: vlaja/digitransit:digitransit_otp_container
