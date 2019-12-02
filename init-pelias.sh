@@ -30,6 +30,3 @@ pelias download all
 pelias prepare all
 pelias import all
 pelias compose up
-
-# optionally run tests
-pelias test run
