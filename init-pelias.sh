@@ -4,7 +4,7 @@ set -x
 mkdir /data /code
 
 # set proper permissions. make sure the user matches your `DOCKER_USER` setting in `.env`
-chown -R 1000:1000 /code
+chown -R 1000:1000 /code /data
 
 # clone repo
 cd /code
@@ -27,6 +27,6 @@ pelias elastic start
 pelias elastic wait
 pelias elastic create
 pelias download osm
-pelias prepare osm
+pelias prepare all
 pelias import osm
 pelias compose up
