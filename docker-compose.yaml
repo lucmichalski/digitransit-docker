@@ -25,7 +25,7 @@ services:
       - "443:443"
     links:
       - digitransit-ui
-      # - digitransit-otp
+      - digitransit-otp
     command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
   certbot:
     container_name: "certbot"
