@@ -8,6 +8,8 @@ services:
   digitransit-otp:
     container_name: "digitransit-otp"
     image: vlaja/digitransit:digitransit_otp
+    volumes:
+      - ./data/otp:/opt/opentripplanner/graphs
   #   depends_on:
   #     - digitransit-otp-container
   # digitransit-otp-container:
