@@ -6,19 +6,19 @@ services:
     restart: always
     depends_on:
       - digitransit-otp
-      # - digitransit-map-server
+      - digitransit-map-server
   digitransit-otp:
     container_name: "digitransit-otp"
     image: vlaja/digitransit:digitransit_otp
     restart: always
     volumes:
       - ./data/otp:/opt/opentripplanner/graphs
-  # digitransit-map-server:
-  #   container_name: "digitransit-map-server"
-  #   image: vlaja/digitransit:digitransit_map_server
-  #   restart: always
-  #   depends_on:
-  #     - digitransit-otp
+  digitransit-map-server:
+    container_name: "digitransit-map-server"
+    image: vlaja/digitransit:digitransit_map_server
+    restart: always
+    depends_on:
+      - digitransit-otp
   nginx:
     container_name: "nginx"
     restart: always
@@ -35,7 +35,7 @@ services:
     links:
       - digitransit-ui
       - digitransit-otp
-      # - digitransit-map-server
+      - digitransit-map-server
     command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
   certbot:
     container_name: "certbot"
