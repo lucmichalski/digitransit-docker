@@ -6,6 +6,7 @@ services:
     restart: always
     depends_on:
       - digitransit-otp
+      - digitransit-map-server
   digitransit-otp:
     container_name: "digitransit-otp"
     image: vlaja/digitransit:digitransit_otp
