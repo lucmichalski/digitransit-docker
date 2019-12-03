@@ -23,7 +23,8 @@ services:
     image: nginx:1.15-alpine
     volumes:
       - ./data/nginx:/etc/nginx/conf.d/
-      - .data/cache:/opt/nginx/geocache
+      - .data/cache/geo:/opt/nginx/geocache
+      - .data/cache/tiles:/opt/nginx/tiles
       - ./data/certbot/conf:/etc/letsencrypt/
       - ./data/certbot/www:/var/www/certbot/
     ports:
