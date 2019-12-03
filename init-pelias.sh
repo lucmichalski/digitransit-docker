@@ -27,6 +27,7 @@ pelias elastic start
 pelias elastic wait
 pelias elastic create
 pelias download osm
+mv /data/openstreetmap/croatia-latest.osm.pbf /data/openstreetmap/croatia.osm.pbf 
 pelias prepare all
 pelias import osm
 pelias compose up
