@@ -13,12 +13,12 @@ services:
     restart: always
     volumes:
       - ./data/otp:/opt/opentripplanner/graphs
-    depends_on:
-      - digitransit-otp
   digitransit-map-server:
     container_name: "digitransit-map-server"
     image: vlaja/digitransit:digitransit_map_server
     restart: always
+    depends_on:
+      - digitransit-otp
   nginx:
     container_name: "nginx"
     restart: always
