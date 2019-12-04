@@ -15,7 +15,7 @@ services:
       - ./data/otp:/opt/opentripplanner/graphs
   digitransit-map-server:
     container_name: "digitransit-map-server"
-    image: vlaja/digitransit:digitransit_map_server
+    image: vlaja/digitransit:digitransit_map_server_dev
     restart: always
     depends_on:
       - digitransit-otp
