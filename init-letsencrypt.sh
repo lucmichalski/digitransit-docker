@@ -5,7 +5,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
   exit 1
 fi
 
-domains=(cityrouting.e-gpp.hr api.cityrouting.e-gpp.hr)
+domains=(cityrouting.prototyp.digital api.cityrouting.prototyp.digital)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="vlatko@prototyp.digital" # Adding a valid address is strongly recommended
