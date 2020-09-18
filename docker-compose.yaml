@@ -1,36 +1,43 @@
-version: "3.3"
+version: '3.3'
 services:
   digitransit-ui:
-    container_name: "digitransit-ui"
+    container_name: 'digitransit-ui'
     image: vlaja/digitransit:digitransit_ui
     restart: always
     depends_on:
       - digitransit-otp
+  digitransit-map-server:
+    container_name: 'digitransit-map-server'
+    image: vlaja/digitransit:digitransit_map_server
+    restart: always
+    depends_on:
+      - digitransit-otp
   digitransit-otp:
-    container_name: "digitransit-otp"
+    container_name: 'digitransit-otp'
     image: vlaja/digitransit:digitransit_otp
     restart: always
     volumes:
       - ./data/otp:/opt/opentripplanner/graphs
   nginx:
-    container_name: "nginx"
+    container_name: 'nginx'
     restart: always
     image: nginx:1.15-alpine
     volumes:
       - ./data/nginx:/etc/nginx/conf.d/
-      - .data/cache/geo:/opt/nginx/geocache
-      - .data/cache/tiles:/opt/nginx/tiles
+      - ./data/cache/geo:/opt/nginx/geocache
+      - ./data/cache/tiles:/opt/nginx/tiles
       - ./data/certbot/conf:/etc/letsencrypt/
       - ./data/certbot/www:/var/www/certbot/
     ports:
-      - "80:80"
-      - "443:443"
+      - '80:80'
+      - '443:443'
     links:
       - digitransit-ui
       - digitransit-otp
+      - digitransit-map-server
     command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
   certbot:
-    container_name: "certbot"
+    container_name: 'certbot'
     image: certbot/certbot
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     volumes:
