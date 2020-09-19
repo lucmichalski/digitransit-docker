@@ -2,7 +2,7 @@ version: '3.3'
 services:
   digitransit-ui:
     container_name: 'digitransit-ui'
-    image: vlaja/digitransit:digitransit_ui_dev
+    image: vlaja/digitransit:digitransit_ui
     restart: always
     depends_on:
       - digitransit-otp
